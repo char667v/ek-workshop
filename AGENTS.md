@@ -32,11 +32,18 @@ npm --cache /tmp/npm-cache install
 npm run dev
 ```
 
+Notes:
+
+- The project is pinned to a StackBlitz-compatible Next.js version.
+- Use `npm run dev` in workshop environments to match documented setup.
+
 ### Build
 
 ```bash
 npm run build
 ```
+
+Note: `npm run build` uses default Next.js build behavior for the pinned version.
 
 ### Start production server
 
@@ -86,7 +93,7 @@ For now, validation is:
 - `app/` - App Router files (`layout.jsx`, `page.jsx`, global CSS)
 - `components/ui/` - Reusable UI components
 - `lib/` - Shared utilities (`cn` helper)
-- `eslint.config.mjs` - ESLint flat config
+- `.eslintrc.json` - ESLint config
 - `components.json` - shadcn/ui configuration
 
 ## Coding Conventions
@@ -162,7 +169,7 @@ Follow existing patterns in this codebase.
 
 ## Lint/Formatting Baseline
 
-- ESLint uses flat config in `eslint.config.mjs`
+- ESLint uses `.eslintrc.json`
 - Next.js rules come from `eslint-config-next/core-web-vitals`
 - No Prettier config is defined; follow existing file style
 - Match surrounding formatting in edited files
