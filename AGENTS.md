@@ -6,7 +6,7 @@ This file is for coding agents working in this repository.
 
 - App type: Next.js App Router app
 - Language: JavaScript (`.jsx`, `.js`), no TypeScript source files
-- UI stack: React 18, Tailwind CSS 4, Radix UI primitives, CVA
+- UI stack: React 19, Tailwind CSS 4, Radix UI primitives, CVA
 - Package manager: `npm`
 - Import alias: `@/*` maps to repository root (see `jsconfig.json`)
 
@@ -117,7 +117,7 @@ Follow existing patterns in this codebase.
 ### React patterns
 
 - Use function components
-- Use `React.forwardRef` for components that need ref forwarding
+- In React 19, pass `ref` as a prop where needed (do not add new `forwardRef` unless required)
 - Keep components small and composable
 - Prefer explicit `if` branches for complex conditional rendering
 - Avoid unnecessary `useEffect`; use it only for external side effects
