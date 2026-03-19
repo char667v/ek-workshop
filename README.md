@@ -25,6 +25,8 @@ npm install
 npm run dev
 ```
 
+Note: On environments without Turbopack native bindings (for example StackBlitz WebContainers), do not run `npx next dev` directly. Use `npm run dev` (configured with `--webpack`) instead.
+
 Open [http://localhost:3000](http://localhost:3000) to see the app.
 
 ### Build
