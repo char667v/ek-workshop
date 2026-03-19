@@ -25,7 +25,7 @@ npm install
 npm run dev
 ```
 
-Note: This project is pinned to a StackBlitz-compatible Next.js version. `npm run dev` is the recommended command in workshop environments.
+Note: On environments without Turbopack native bindings (for example StackBlitz WebContainers), do not run `npx next dev` directly. Use `npm run dev` (configured with `--webpack`) instead.
 
 Open [http://localhost:3000](http://localhost:3000) to see the app.
 
