@@ -57,20 +57,20 @@ npm start
 ### ✅ Pre-built Components
 
 #### Button Component (`components/ui/button.jsx`)
-A fully-featured button with multiple variants using CVA (class-variance-authority):
+A starter button component using CVA (class-variance-authority) with a single `default` variant:
 
-- **Variants:** `default`, `secondary`, `success`, `danger`, `outline`, `ghost`, `link`
+- **Variants:** `default` (students add more in Task 1)
 - **Sizes:** `default`, `sm`, `lg`, `icon`
 - Accessible with focus states
-- Clean JavaScript implementation
+- Clean JavaScript implementation using `forwardRef` and `cn()`
 
 **Usage:**
-```tsx
+```jsx
 import { Button } from "@/components/ui/button"
 
-<Button variant="default">Click me</Button>
-<Button variant="success" size="lg">Success</Button>
-<Button variant="danger">Delete</Button>
+<Button>Click me</Button>
+<Button size="lg">Large Button</Button>
+<Button size="sm">Small Button</Button>
 ```
 
 #### Card Component (`components/ui/card.jsx`)
@@ -84,7 +84,7 @@ A composable card component with subcomponents:
 - `CardFooter` - Footer section
 
 **Usage:**
-```tsx
+```jsx
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 
 <Card>
@@ -99,23 +99,31 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 
 ## Workshop Tasks
 
-### Task 1: Explore Existing Components (15 min)
+### Task 1: Add Button Variants (30 min)
 
-**Goal:** Understand how the Button and Card components work
+**Goal:** Learn the CVA variant pattern by adding new button styles
 
-1. Open `components/ui/button.jsx`
-   - Study the CVA variant pattern
-   - Notice how `cn()` utility merges classes
-   - See how React forwardRef is used
+**File:** `components/ui/button.jsx`
 
-2. Open `components/ui/card.jsx`
-   - Observe the composable component pattern
-   - Notice how `forwardRef` is used for ref forwarding
-   - See how subcomponents work together
+1. **Study the existing code:**
+   - The Button ships with only a `default` variant
+   - Notice how CVA defines `variants`, `sizes`, and `defaultVariants`
+   - See how `cn()` merges classes and `forwardRef` forwards refs
 
-3. Experiment on the home page
-   - Try adding new button combinations
-   - Create additional cards with different content
+2. **Add these variants to the CVA config:**
+   - `secondary` - uses `bg-secondary` / `text-secondary-foreground`
+   - `success` - uses `bg-success` / `text-success-foreground`
+   - `danger` - uses `bg-destructive` / `text-destructive-foreground`
+   - `outline` - border style with transparent background, hover with `bg-accent`
+   - `ghost` - no background, shows hover effect with `bg-accent`
+   - `link` - text-only style with underline on hover
+
+3. **Test on the home page:**
+   - Uncomment the variant demos in `app/page.jsx`
+   - Verify each variant renders correctly
+   - Try combining variants with different sizes
+
+**Hint:** Check `globals.css` and `tailwind.config.js` to see which design tokens are available (e.g. `success`, `destructive`, `secondary`, `accent`).
 
 ### Task 2: Build a Dialog Component (45 min)
 
@@ -143,7 +151,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 - [Shadcn Dialog Reference](https://ui.shadcn.com/docs/components/dialog)
 
 **Example Usage:**
-```tsx
+```jsx
 <Dialog>
   <DialogTrigger asChild>
     <Button>Open Dialog</Button>
@@ -188,7 +196,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 - Store theme preference in `localStorage`
 
 **Example Usage:**
-```tsx
+```jsx
 <Navbar>
   <NavbarBrand>My App</NavbarBrand>
   <NavbarLinks>
@@ -229,7 +237,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 - Use your Button component variants for actions
 
 **Example Usage:**
-```tsx
+```jsx
 <FormDialog>
   <FormDialogTrigger asChild>
     <Button>Contact Us</Button>
@@ -287,7 +295,7 @@ Get creative! Build something that follows the design system principles:
 
 Combines `clsx` and `tailwind-merge` for optimal class merging:
 
-```tsx
+```jsx
 import { cn } from "@/lib/utils"
 
 // Merges classes and resolves Tailwind conflicts

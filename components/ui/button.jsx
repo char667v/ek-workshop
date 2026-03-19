@@ -8,16 +8,13 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        success:
-          "bg-success text-success-foreground hover:bg-success/90",
-        danger:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+        // TODO: Add more variants here! Ideas:
+        // secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        // success: use the success design token
+        // danger: use the destructive design token
+        // outline: border style with transparent background
+        // ghost: no background, just hover effect
+        // link: text style with underline on hover
       },
       size: {
         default: "h-10 px-4 py-2",

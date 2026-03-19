@@ -38,11 +38,12 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-3">
                 <Button variant="default">Default</Button>
-                <Button variant="secondary">Secondary</Button>
-                <Button variant="success">Success</Button>
-                <Button variant="danger">Danger</Button>
-                <Button variant="outline">Outline</Button>
-                <Button variant="ghost">Ghost</Button>
+                {/* TODO: Add your new button variants here! For example: */}
+                {/* <Button variant="secondary">Secondary</Button> */}
+                {/* <Button variant="success">Success</Button> */}
+                {/* <Button variant="danger">Danger</Button> */}
+                {/* <Button variant="outline">Outline</Button> */}
+                {/* <Button variant="ghost">Ghost</Button> */}
               </div>
             </CardContent>
             <CardFooter>
