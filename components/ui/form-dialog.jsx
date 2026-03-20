@@ -16,8 +16,10 @@ import { cn } from "@/lib/utils"
 /**
  * Form Dialog Component - Workshop Task
  *
- * Build a dialog with a contact form inside.
+ * Task 4: Build a dialog with a contact form inside.
  * This combines your Dialog component (Task 2) with form state management.
+ *
+ * You are now composing multiple reusable pieces into a realistic feature.
  *
  * NOTE: This file uses "use client" because it needs React state (useState)
  * for form data, validation, and submission handling.
@@ -53,6 +55,11 @@ import { cn } from "@/lib/utils"
  *       <Button>Contact Us</Button>
  *     </DialogTrigger>
  *   </FormDialog>
+ *
+ * Checkpoint:
+ * - Invalid form data shows errors
+ * - Valid submit logs data and shows success state
+ * - Closing and reopening resets the form
  */
 
 export {}

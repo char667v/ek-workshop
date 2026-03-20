@@ -5,8 +5,12 @@ import { cn } from "@/lib/utils"
 /**
  * Alert Component - Workshop Task
  *
- * Build an Alert component that combines CVA variants (like Button)
+ * Task 3: Build an Alert component that combines CVA variants (like Button)
  * with composable subcomponents (like Card).
+ *
+ * You are practicing two design system patterns in one component:
+ * - API flexibility through variants
+ * - composition through small subcomponents
  *
  * Subcomponents to create:
  * - Alert            → main container with CVA variants
@@ -42,6 +46,10 @@ import { cn } from "@/lib/utils"
  *     <AlertTitle>Warning</AlertTitle>
  *     <AlertDescription>This action cannot be undone.</AlertDescription>
  *   </Alert>
+ *
+ * Checkpoint:
+ * - Add one demo per variant in app/page.jsx
+ * - Confirm spacing, typography, and colors are consistent
  */
 
 export {}

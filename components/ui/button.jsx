@@ -8,7 +8,10 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        // TODO: Add more variants here! Ideas:
+        // Workshop Task 1: Add your variants here.
+        // Goal: Expand the API so this Button is reusable across contexts.
+        // Start with one variant, test it in app/page.jsx, then add the rest.
+        // Variants to implement:
         // secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         // success: use the success design token
         // danger: use the destructive design token

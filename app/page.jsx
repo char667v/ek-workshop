@@ -19,7 +19,7 @@ export default function Home() {
               Design Systems Workshop
             </h1>
             <p className="text-lg text-muted-foreground">
-              Learn to build consistent, accessible, and reusable UI components
+              Build reusable UI components using design system patterns
             </p>
           </div>
 
@@ -28,13 +28,13 @@ export default function Home() {
             <CardHeader>
               <CardTitle>Welcome to the Workshop</CardTitle>
               <CardDescription>
-                This starter includes pre-built Button and Card components
+                You are starting from two reference components: Button and Card
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-sm">
-                Explore the existing components, then complete the workshop
-                tasks to build your own Dialog, Alert, and Form components.
+                Complete the tasks in order to build your own Button variants,
+                Dialog, Alert, and Form Dialog.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Button variant="default">Default</Button>
@@ -59,7 +59,7 @@ export default function Home() {
             <Card>
               <CardHeader>
                 <CardTitle className="text-xl">Your Tasks</CardTitle>
-                <CardDescription>Complete these steps in order</CardDescription>
+                <CardDescription>Build these in order, then demo each in this page</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm">
@@ -145,8 +145,8 @@ export default function Home() {
                 for hints and imports
               </p>
               <p className="text-sm">
-                <strong>3. Build your components:</strong> Follow the patterns
-                from Button (CVA variants) and Card (composable subcomponents)
+                <strong>3. Build task-by-task:</strong> Use Button for CVA
+                patterns and Card for subcomponent patterns
               </p>
               <p className="text-sm">
                 <strong>4. Test in the browser:</strong> Add your components to

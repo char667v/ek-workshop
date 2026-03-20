@@ -1,6 +1,6 @@
-# Design Systems Workshop Starter
+# Design Systems Workshop Participant Guide
 
-A hands-on workshop starter kit for learning to build consistent, accessible, and reusable UI components using modern tools and best practices.
+Welcome, this workshop is hands-on. You will extend a small UI library and practice the same patterns design system teams use in real products.
 
 ## Tech Stack
 
@@ -11,16 +11,16 @@ A hands-on workshop starter kit for learning to build consistent, accessible, an
 - **class-variance-authority** for component variants
 - **Radix UI** for accessible primitives
 
-## Getting Started
+## Start Here
 
-Open the StackBlitz link provided by the workshop facilitator. The project runs in your browser with no local setup required.
+Open the StackBlitz link shared by your facilitator. The project runs in your browser, so you do not need local setup.
 
-Once the editor loads:
+When the editor loads:
 
 1. Wait for the dev server to start (you'll see the app preview)
-2. Explore `components/ui/button.jsx` and `components/ui/card.jsx` to see the patterns
-3. Open the task files in `components/ui/` to see hints and pre-configured imports
-4. Start with Task 1 and work through the tasks in order
+2. Read `components/ui/button.jsx` and `components/ui/card.jsx` first (these are your pattern references)
+3. Open the task files in `components/ui/` (imports and hints are already prepared)
+4. Complete Tasks 1 to 4 in order
 
 ## Project Structure
 
@@ -85,11 +85,11 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 
 ## Workshop Tasks
 
-These are the official student tasks for the workshop. Complete them in order and use `app/page.jsx` as your test surface as you go.
+Use `app/page.jsx` as your sandbox while you work. After each task, add a small demo to confirm your component API works.
 
 ### Task 1: Add Button Variants (30 min)
 
-**Goal:** Learn the CVA variant pattern by adding new button styles
+In this task, you will expand the Button API with reusable variants.
 
 **File:** `components/ui/button.jsx`
 
@@ -106,7 +106,7 @@ These are the official student tasks for the workshop. Complete them in order an
    - `ghost` - no background, shows hover effect with `bg-accent`
    - `link` - text-only style with underline on hover
 
-3. **Test on the home page:**
+3. **Checkpoint:**
    - Uncomment the variant demos in `app/page.jsx`
    - Verify each variant renders correctly
    - Try combining variants with different sizes
@@ -115,11 +115,18 @@ These are the official student tasks for the workshop. Complete them in order an
 
 ### Task 2: Build a Dialog Component (45 min)
 
-**Goal:** Create a modal dialog using Radix UI primitives
+In this task, you will build a dialog by following the Radix docs directly.
 
 **File:** `components/ui/dialog.jsx` (imports are pre-configured)
 
-Radix UI's Dialog primitive handles accessibility automatically (focus trap, ESC to close, ARIA attributes). Your job is to create styled wrapper subcomponents.
+Start here: [Radix Dialog Docs](https://www.radix-ui.com/docs/primitives/components/dialog)
+
+Do this in order:
+1. Open the Radix docs and copy the primitive structure (`Root`, `Trigger`, `Portal`, `Overlay`, `Content`, `Title`, `Description`, `Close`).
+2. In `components/ui/dialog.jsx`, wrap those primitives into your own reusable components.
+3. Add your Tailwind classes so it looks consistent with the rest of the app.
+
+Radix handles accessibility for you (focus trap, ESC to close, ARIA attributes).
 
 **Subcomponents to create:**
 - `Dialog` - re-export `DialogPrimitive.Root`
@@ -159,14 +166,14 @@ className="transition-opacity duration-200 data-[state=open]:opacity-100 data-[s
 ```
 
 **Resources:**
-- [Radix Dialog Docs](https://www.radix-ui.com/docs/primitives/components/dialog)
-- [Shadcn Dialog Reference](https://ui.shadcn.com/docs/components/dialog)
+- [Radix Dialog Docs](https://www.radix-ui.com/docs/primitives/components/dialog) (read this first)
+- [Shadcn Dialog Reference](https://ui.shadcn.com/docs/components/dialog) (optional backup)
 
-**Test it:** Add a dialog to `app/page.jsx` and verify it opens/closes correctly.
+**Checkpoint:** Add a dialog to `app/page.jsx` and verify open/close, focus trap, and ESC behavior.
 
 ### Task 3: Build an Alert Component (30 min)
 
-**Goal:** Combine CVA variants with composable subcomponents
+In this task, you will combine two patterns: CVA variants (Button) + subcomponents (Card).
 
 **File:** `components/ui/alert.jsx` (imports are pre-configured)
 
@@ -198,11 +205,11 @@ This task brings together both patterns you've seen: CVA from Button (variants) 
 
 **Hint:** The Alert container uses `cva()` (like Button) but each subcomponent uses the simpler Card pattern (just `forwardRef` + `cn()`, no variants).
 
-**Test it:** Add alerts for each variant to `app/page.jsx`.
+**Checkpoint:** Add one demo per variant to `app/page.jsx` and verify visual consistency.
 
 ### Task 4: Build a Form Dialog (45 min)
 
-**Goal:** Combine Dialog with a form for user input
+In this task, you will compose your Dialog and Button into a real feature with validation.
 
 **File:** `components/ui/form-dialog.jsx` (imports are pre-configured, including your Dialog)
 
@@ -240,7 +247,7 @@ This task brings together both patterns you've seen: CVA from Button (variants) 
 </FormDialog>
 ```
 
-**Test it:** Add to the home page and verify form validation and submission work.
+**Checkpoint:** Add it to `app/page.jsx`, submit valid/invalid data, and confirm reset-on-close works.
 
 ### Bonus: Create Your Own Component (Optional)
 

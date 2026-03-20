@@ -6,7 +6,16 @@ import { cn } from "@/lib/utils"
 /**
  * Dialog Component - Workshop Task
  *
- * Build a modal dialog using Radix UI primitives.
+ * Task 2: Build a reusable modal dialog using Radix UI primitives.
+ *
+ * First step: open the Radix Dialog docs and copy their primitive structure.
+ * Docs: https://www.radix-ui.com/docs/primitives/components/dialog
+ *
+ * Keep it simple:
+ * 1) Copy the Radix primitive structure
+ * 2) Wrap it in your own components
+ * 3) Add Tailwind classes
+ *
  * Radix handles accessibility (focus trap, ESC to close, ARIA) automatically.
  * Your job is to create styled wrapper subcomponents.
  *
@@ -58,6 +67,10 @@ import { cn } from "@/lib/utils"
  *       </DialogFooter>
  *     </DialogContent>
  *   </Dialog>
+ *
+ * Checkpoint:
+ * - Add a demo in app/page.jsx
+ * - Verify open/close, ESC close, and focus behavior
  */
 
 export {}
