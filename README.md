@@ -85,6 +85,8 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 
 ## Workshop Tasks
 
+These are the official student tasks for the workshop. Complete them in order and use `app/page.jsx` as your test surface as you go.
+
 ### Task 1: Add Button Variants (30 min)
 
 **Goal:** Learn the CVA variant pattern by adding new button styles

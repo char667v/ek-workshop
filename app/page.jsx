@@ -34,7 +34,7 @@ export default function Home() {
             <CardContent className="space-y-4">
               <p className="text-sm">
                 Explore the existing components, then complete the workshop
-                tasks to build your own Alert, Dialog, and Form components.
+                tasks to build your own Dialog, Alert, and Form components.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Button variant="default">Default</Button>
@@ -59,6 +59,7 @@ export default function Home() {
             <Card>
               <CardHeader>
                 <CardTitle className="text-xl">Your Tasks</CardTitle>
+                <CardDescription>Complete these steps in order</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm">
