@@ -11,60 +11,47 @@ A hands-on workshop starter kit for learning to build consistent, accessible, an
 - **class-variance-authority** for component variants
 - **Radix UI** for accessible primitives
 
-## Quick Start
+## Getting Started
 
-### Installation
+Open the StackBlitz link provided by the workshop facilitator. The project runs in your browser with no local setup required.
 
-```bash
-npm install
-```
+Once the editor loads:
 
-### Development
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) to see the app.
-
-### Build
-
-```bash
-npm run build
-npm start
-```
+1. Wait for the dev server to start (you'll see the app preview)
+2. Explore `components/ui/button.jsx` and `components/ui/card.jsx` to see the patterns
+3. Open the task files in `components/ui/` to see hints and pre-configured imports
+4. Start with Task 1 and work through the tasks in order
 
 ## Project Structure
 
 ```
 /app
-  /page.jsx          # Main demo page
+  /page.jsx          # Main demo page (add your components here to test)
   /layout.jsx        # Root layout with fonts
-  /globals.css       # Global styles + CSS variables
+  /globals.css       # Global styles + CSS design tokens
 /components
   /ui
-    /button.jsx      # ✅ Pre-built Button component
-    /card.jsx        # ✅ Pre-built Card component
-    /dialog.jsx      # 🚧 TODO: Workshop task
-    /navbar.jsx      # 🚧 TODO: Workshop task
-    /form-dialog.jsx # 🚧 TODO: Workshop task
+    /button.jsx      # ✅ Pre-built Button component (default variant only)
+    /card.jsx        # ✅ Pre-built Card component (composable subcomponents)
+    /dialog.jsx      # 🚧 Task 2: Dialog with Radix UI
+    /alert.jsx       # 🚧 Task 3: Alert with CVA variants
+    /form-dialog.jsx # 🚧 Task 4: Form Dialog (requires Task 2)
 /lib
   /utils.js          # Utility functions (cn helper)
 ```
 
 ## What's Included
 
-### ✅ Pre-built Components
+### Pre-built Components
 
 #### Button Component (`components/ui/button.jsx`)
 A starter button component using CVA (class-variance-authority) with a single `default` variant:
 
-- **Variants:** `default` (students add more in Task 1)
+- **Variants:** `default` (you add more in Task 1)
 - **Sizes:** `default`, `sm`, `lg`, `icon`
 - Accessible with focus states
-- Clean JavaScript implementation using `forwardRef` and `cn()`
+- Uses `forwardRef` and `cn()` for class merging
 
-**Usage:**
 ```jsx
 import { Button } from "@/components/ui/button"
 
@@ -83,7 +70,6 @@ A composable card component with subcomponents:
 - `CardContent` - Main content area
 - `CardFooter` - Footer section
 
-**Usage:**
 ```jsx
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 
@@ -129,26 +115,27 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 
 **Goal:** Create a modal dialog using Radix UI primitives
 
-**File:** `components/ui/dialog.jsx`
+**File:** `components/ui/dialog.jsx` (imports are pre-configured)
 
-**Requirements:**
-- Use `@radix-ui/react-dialog` (already installed)
-- Create subcomponents:
-  - `Dialog` (root)
-  - `DialogTrigger`
-  - `DialogContent` (with overlay)
-  - `DialogHeader`
-  - `DialogTitle`
-  - `DialogDescription`
-  - `DialogFooter`
-  - `DialogClose`
-- Style with Tailwind matching the design system
-- Add animations (fade in/out for overlay, slide in for content)
-- Ensure accessibility (proper ARIA, focus trap, ESC to close)
+Radix UI's Dialog primitive handles accessibility automatically (focus trap, ESC to close, ARIA attributes). Your job is to create styled wrapper subcomponents.
 
-**Resources:**
-- [Radix Dialog Docs](https://www.radix-ui.com/docs/primitives/components/dialog)
-- [Shadcn Dialog Reference](https://ui.shadcn.com/docs/components/dialog)
+**Subcomponents to create:**
+- `Dialog` - re-export `DialogPrimitive.Root`
+- `DialogTrigger` - re-export `DialogPrimitive.Trigger`
+- `DialogPortal` - re-export `DialogPrimitive.Portal`
+- `DialogOverlay` - styled overlay (dark backdrop)
+- `DialogContent` - styled content panel (uses Portal + Overlay internally)
+- `DialogHeader` - layout wrapper for title + description
+- `DialogTitle` - styled `DialogPrimitive.Title`
+- `DialogDescription` - styled `DialogPrimitive.Description`
+- `DialogFooter` - layout wrapper for action buttons
+- `DialogClose` - re-export `DialogPrimitive.Close`
+
+**Animation hint:** Since `tailwindcss-animate` is not installed, you can use Tailwind's transition utilities with Radix's `data-[state=open]` / `data-[state=closed]` attributes:
+```jsx
+// Overlay example
+className="transition-opacity duration-200 data-[state=open]:opacity-100 data-[state=closed]:opacity-0"
+```
 
 **Example Usage:**
 ```jsx
@@ -162,61 +149,65 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
       <DialogDescription>This action cannot be undone.</DialogDescription>
     </DialogHeader>
     <DialogFooter>
-      <Button variant="secondary">Cancel</Button>
-      <Button variant="danger">Confirm</Button>
+      <Button variant="outline">Cancel</Button>
+      <Button>Confirm</Button>
     </DialogFooter>
   </DialogContent>
 </Dialog>
 ```
 
+**Resources:**
+- [Radix Dialog Docs](https://www.radix-ui.com/docs/primitives/components/dialog)
+- [Shadcn Dialog Reference](https://ui.shadcn.com/docs/components/dialog)
+
 **Test it:** Add a dialog to `app/page.jsx` and verify it opens/closes correctly.
 
-### Task 3: Create a Navbar Component (45 min)
+### Task 3: Build an Alert Component (30 min)
 
-**Goal:** Build a responsive navigation bar with dark mode support
+**Goal:** Combine CVA variants with composable subcomponents
 
-**File:** `components/ui/navbar.jsx`
+**File:** `components/ui/alert.jsx` (imports are pre-configured)
 
-**Requirements:**
-- Responsive design
-  - Desktop: horizontal layout
-  - Mobile: hamburger menu
-- Logo/brand section
-- Navigation links
-- Dark mode toggle button
-  - Use `lucide-react` icons (e.g., `Moon`, `Sun`)
-  - Toggle the `dark` class on `<html>` element
-- Sticky positioning (`sticky top-0`)
-- Proper z-index for overlays
-- Smooth transitions
+This task brings together both patterns you've seen: CVA from Button (variants) and composable subcomponents from Card (`forwardRef` + `cn()`).
 
-**Hints:**
-- Use React state for mobile menu: `const [isOpen, setIsOpen] = useState(false)`
-- Use `useEffect` or `useState` for theme management
-- Store theme preference in `localStorage`
+**Subcomponents to create:**
+- `Alert` - main container with CVA variants
+- `AlertTitle` - styled `<h5>` for the alert heading
+- `AlertDescription` - styled `<div>` for the alert message
+
+**CVA variants to implement:**
+- `default` - neutral style using `bg-background` / `text-foreground`
+- `success` - green tones using `border-success/50` / `text-success` / `bg-success/10`
+- `destructive` - red tones using `border-destructive/50` / `text-destructive` / `bg-destructive/10`
+- `warning` - yellow tones (no design token for this, so use Tailwind's `yellow` directly)
 
 **Example Usage:**
 ```jsx
-<Navbar>
-  <NavbarBrand>My App</NavbarBrand>
-  <NavbarLinks>
-    <NavbarLink href="/">Home</NavbarLink>
-    <NavbarLink href="/about">About</NavbarLink>
-  </NavbarLinks>
-  <DarkModeToggle />
-</Navbar>
+<Alert variant="success">
+  <AlertTitle>Success!</AlertTitle>
+  <AlertDescription>Your changes have been saved.</AlertDescription>
+</Alert>
+
+<Alert variant="destructive">
+  <AlertTitle>Error</AlertTitle>
+  <AlertDescription>Something went wrong. Please try again.</AlertDescription>
+</Alert>
 ```
 
-**Test it:** Add the navbar to `app/layout.jsx` and test dark mode toggle.
+**Hint:** The Alert container uses `cva()` (like Button) but each subcomponent uses the simpler Card pattern (just `forwardRef` + `cn()`, no variants).
+
+**Test it:** Add alerts for each variant to `app/page.jsx`.
 
 ### Task 4: Build a Form Dialog (45 min)
 
 **Goal:** Combine Dialog with a form for user input
 
-**File:** `components/ui/form-dialog.jsx`
+**File:** `components/ui/form-dialog.jsx` (imports are pre-configured, including your Dialog)
+
+**Important:** This file already has `"use client"` at the top because it needs React state (`useState`) for form data and validation. This is required for any component that uses hooks or event handlers in Next.js App Router.
 
 **Requirements:**
-- Build on top of your Dialog component
+- Build on top of your Dialog component from Task 2
 - Include form fields:
   - Name (text input)
   - Email (email input)
@@ -224,45 +215,45 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 - Form validation
   - Required fields
   - Email format validation
-  - Show error messages
-- Submit and Cancel buttons with proper variants
-- Handle form submission (console.log data for now)
-- Success state (show confirmation message)
-- Reset form on close
+  - Show error messages below invalid fields
+- Submit and Cancel buttons using your Button variants
+- Handle form submission (`console.log` data for now)
+- Success state (show confirmation message after submit)
+- Reset form when dialog closes
 
-**Hints:**
-- Use React state for form data and errors
-- Consider using `onSubmit` handler with `e.preventDefault()`
-- Style inputs consistently with the design system
-- Use your Button component variants for actions
+**Input styling hint:**
+```jsx
+<input
+  className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+  placeholder="Your name"
+/>
+```
 
 **Example Usage:**
 ```jsx
 <FormDialog>
-  <FormDialogTrigger asChild>
+  <DialogTrigger asChild>
     <Button>Contact Us</Button>
-  </FormDialogTrigger>
+  </DialogTrigger>
 </FormDialog>
 ```
 
 **Test it:** Add to the home page and verify form validation and submission work.
 
-### Bonus Task: Create Your Own Component (Optional)
+### Bonus: Create Your Own Component (Optional)
 
 Get creative! Build something that follows the design system principles:
 
 **Ideas:**
-- Alert/Toast notification component
-- Dropdown menu
-- Tabs component
+- Badge component (small, CVA variants)
+- Tooltip (using Radix primitives)
 - Accordion component
-- Badge component
 - Avatar component
 
 **Guidelines:**
-- Follow the existing patterns (CVA for variants, `cn` for class merging)
+- Follow the existing patterns (CVA for variants, `cn()` for class merging)
 - Use Radix UI primitives where applicable
-- Maintain consistency with existing components
+- Maintain consistency with existing design tokens
 - Ensure accessibility
 
 ## Design System Principles
@@ -275,7 +266,7 @@ Get creative! Build something that follows the design system principles:
 ### 2. Reusability
 - Build composable components
 - Support variants and sizes
-- Accept className prop for customization
+- Accept `className` prop for customization
 
 ### 3. Accessibility
 - Use semantic HTML
@@ -287,7 +278,6 @@ Get creative! Build something that follows the design system principles:
 - Clean JavaScript code
 - Clear component APIs
 - Intuitive component patterns
-- Helpful JSDoc comments
 
 ## Utilities
 
@@ -317,14 +307,13 @@ Automatically support light/dark mode via `.dark` class.
 
 1. **Start small:** Get one variant working before adding more
 2. **Study examples:** Look at Button and Card for patterns
-3. **Follow patterns:** Use forwardRef and cn() utility consistently
+3. **Follow patterns:** Use `forwardRef` and `cn()` consistently
 4. **Test frequently:** Check your components in the browser often
 5. **Read the docs:** Radix UI docs are excellent resources
 6. **Ask questions:** Don't hesitate to seek help when stuck
 
 ## Resources
 
-- [Next.js 14 Docs](https://nextjs.org/docs)
 - [Tailwind CSS Docs](https://tailwindcss.com/docs)
 - [Radix UI Primitives](https://www.radix-ui.com/docs/primitives)
 - [Shadcn/UI Components](https://ui.shadcn.com/docs/components)
@@ -336,33 +325,17 @@ Automatically support light/dark mode via `.dark` class.
 ### Styles not applying
 - Check if `globals.css` is imported in `layout.jsx`
 - Verify Tailwind config includes all content paths
-- Clear `.next` cache: `rm -rf .next` and rebuild
+- Clear `.next` cache and rebuild
 
 ### Import errors
-- Run `npm install` to ensure all dependencies are installed
-- Check `jsconfig.json` paths are correct
-- Restart your development server
+- Check that your imports match what the component exports
+- Restart your development server if StackBlitz gets stuck
 
-### Dark mode not working
-- Ensure `dark` class is toggled on `<html>` element
-- Check `tailwind.config.js` has `darkMode: ["class"]`
-- Verify CSS variables are defined for `.dark` in `globals.css`
-
-## StackBlitz Deployment
-
-This project is fully compatible with StackBlitz:
-
-1. Push code to GitHub
-2. Open StackBlitz and import the repository
-3. Run `npm install` and `npm run dev`
-4. Start building!
-
-Alternatively, you can directly upload the project folder to StackBlitz.
+### `useState is not a function` error
+- Add `"use client"` at the very top of the file (before any imports)
+- This is needed for components that use React hooks (`useState`, `useEffect`)
+- Note: The Dialog component does NOT need this because Radix handles it internally
 
 ## License
 
 MIT - Feel free to use this starter for learning and teaching!
-
-## Happy Building!
-
-Remember: Good design systems are built iteratively. Start simple, test thoroughly, and refine based on feedback. Focus on making components that are **consistent**, **reusable**, and **accessible**.

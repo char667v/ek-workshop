@@ -24,7 +24,7 @@ components/
     button.jsx         # Pre-built: Button with CVA (default variant only)
     card.jsx           # Pre-built: Composable Card with subcomponents
     dialog.jsx         # Stub: Workshop task (Radix Dialog)
-    navbar.jsx         # Stub: Workshop task (responsive nav + dark mode)
+    alert.jsx          # Stub: Workshop task (CVA variants + subcomponents)
     form-dialog.jsx    # Stub: Workshop task (Dialog + form)
 lib/
   utils.js             # cn() helper (clsx + tailwind-merge)
@@ -65,7 +65,7 @@ The Button (default variant only) and Card are pre-built as reference examples. 
 
 1. **Button variants** (secondary, success, danger, outline, ghost, link)
 2. **Dialog** using `@radix-ui/react-dialog`
-3. **Navbar** with responsive layout + dark mode toggle
-4. **Form Dialog** combining Dialog + form inputs
+3. **Alert** with CVA variants + composable subcomponents
+4. **Form Dialog** combining Dialog + form inputs (requires `"use client"`)
 
 All design tokens and dependencies are already in place. Students just need to write the component code.

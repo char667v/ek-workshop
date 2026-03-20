@@ -75,8 +75,8 @@ Students work on these in order (Task 1 first, then pick from 2-4):
 
 1. **Button Variants** - Add `secondary`, `success`, `danger`, `outline`, `ghost`, `link` variants to the existing Button CVA config
 2. **Dialog** - Build using `@radix-ui/react-dialog` (already installed) with overlay, animations, and subcomponents
-3. **Navbar** - Responsive nav with hamburger menu, dark mode toggle using `lucide-react` icons
-4. **Form Dialog** - Combine Dialog + form with validation, building on Task 2
+3. **Alert** - CVA variants (default, success, destructive, warning) + composable subcomponents (Alert, AlertTitle, AlertDescription). Combines the Button pattern (CVA) with the Card pattern (subcomponents).
+4. **Form Dialog** - Combine Dialog + form with validation, building on Task 2. Requires `"use client"` because it uses React state for form data.
 
 ## What to Avoid
 

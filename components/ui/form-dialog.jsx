@@ -1,32 +1,58 @@
+"use client"
+
+import * as React from "react"
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from "@/components/ui/dialog"
+import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+
 /**
  * Form Dialog Component - Workshop Task
  *
- * TODO: Create a Dialog with a form inside
+ * Build a dialog with a contact form inside.
+ * This combines your Dialog component (Task 2) with form state management.
+ *
+ * NOTE: This file uses "use client" because it needs React state (useState)
+ * for form data, validation, and submission handling.
  *
  * Requirements:
- * - Build on top of your Dialog component
- * - Include form inputs (name, email, message)
- * - Add form validation
- * - Success/error states
- * - Submit and Cancel buttons with proper variants
- * - Handle form submission (can just console.log for now)
+ * - Build on top of your Dialog component (imported above)
+ * - Form fields: name (text), email (email), message (textarea)
+ * - Validation: required fields, email format check
+ * - Show error messages below invalid fields
+ * - Handle submit (console.log the form data)
+ * - Show a success message after submission
+ * - Reset form when dialog closes (use Dialog's onOpenChange prop)
  *
- * Example structure:
- * <FormDialog>
- *   <FormDialogTrigger asChild>
- *     <Button>Contact Us</Button>
- *   </FormDialogTrigger>
- *   <FormDialogContent>
- *     <form>
- *       <input name="name" placeholder="Your name" />
- *       <input name="email" type="email" placeholder="Your email" />
- *       <textarea name="message" placeholder="Your message" />
- *       <Button type="submit">Send</Button>
- *     </form>
- *   </FormDialogContent>
- * </FormDialog>
+ * Input styling hint:
+ *   "flex w-full rounded-md border border-input bg-background px-3 py-2
+ *    text-sm placeholder:text-muted-foreground focus-visible:outline-none
+ *    focus-visible:ring-2 focus-visible:ring-ring"
  *
- * Hint: Use your Dialog and Button components as building blocks
+ * Label styling hint:
+ *   "text-sm font-medium leading-none"
+ *
+ * Error message hint:
+ *   "text-xs text-destructive mt-1"
+ *
+ * State management hints:
+ *   const [formData, setFormData] = React.useState({ name: "", email: "", message: "" })
+ *   const [errors, setErrors] = React.useState({})
+ *   const [submitted, setSubmitted] = React.useState(false)
+ *
+ * Example usage:
+ *   <FormDialog>
+ *     <DialogTrigger asChild>
+ *       <Button>Contact Us</Button>
+ *     </DialogTrigger>
+ *   </FormDialog>
  */
 
 export {}

@@ -34,16 +34,17 @@ export default function Home() {
             <CardContent className="space-y-4">
               <p className="text-sm">
                 Explore the existing components, then complete the workshop
-                tasks to build your own Dialog, Navbar, and Form components.
+                tasks to build your own Alert, Dialog, and Form components.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Button variant="default">Default</Button>
-                {/* TODO: Add your new button variants here! For example: */}
+                {/* TODO: Uncomment these after adding variants in button.jsx */}
                 {/* <Button variant="secondary">Secondary</Button> */}
                 {/* <Button variant="success">Success</Button> */}
                 {/* <Button variant="danger">Danger</Button> */}
                 {/* <Button variant="outline">Outline</Button> */}
                 {/* <Button variant="ghost">Ghost</Button> */}
+                {/* <Button variant="link">Link</Button> */}
               </div>
             </CardContent>
             <CardFooter>
@@ -57,25 +58,35 @@ export default function Home() {
           <div className="grid gap-6 md:grid-cols-2">
             <Card>
               <CardHeader>
-                <CardTitle className="text-xl">🎯 Your Tasks</CardTitle>
+                <CardTitle className="text-xl">Your Tasks</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start gap-2">
-                    <span className="text-primary">1.</span>
-                    <span>Add new Button variants or customize existing ones</span>
+                    <span className="text-primary font-medium">1.</span>
+                    <span>
+                      Add Button variants: secondary, success, danger, outline,
+                      ghost, link
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-primary">2.</span>
-                    <span>Build a Dialog component using Radix UI</span>
+                    <span className="text-primary font-medium">2.</span>
+                    <span>
+                      Build a Dialog component using Radix UI primitives
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-primary">3.</span>
-                    <span>Create a responsive Navbar with dark mode toggle</span>
+                    <span className="text-primary font-medium">3.</span>
+                    <span>
+                      Create an Alert component with CVA variants and
+                      subcomponents
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-primary">4.</span>
-                    <span>Implement a Form Dialog combining Dialog + forms</span>
+                    <span className="text-primary font-medium">4.</span>
+                    <span>
+                      Build a Form Dialog combining Dialog + form validation
+                    </span>
                   </li>
                 </ul>
               </CardContent>
@@ -83,24 +94,24 @@ export default function Home() {
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-xl">💡 Key Concepts</CardTitle>
+                <CardTitle className="text-xl">Key Concepts</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start gap-2">
-                    <span className="text-success">✓</span>
+                    <span className="text-success font-medium">✓</span>
                     <span>Consistent design tokens (colors, spacing)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-success">✓</span>
+                    <span className="text-success font-medium">✓</span>
                     <span>Component variants with CVA</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-success">✓</span>
+                    <span className="text-success font-medium">✓</span>
                     <span>Accessibility-first with Radix primitives</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-success">✓</span>
+                    <span className="text-success font-medium">✓</span>
                     <span>Composable component architecture</span>
                   </li>
                 </ul>
@@ -111,7 +122,7 @@ export default function Home() {
           {/* Getting Started */}
           <Card className="border-primary/20 bg-primary/5">
             <CardHeader>
-              <CardTitle className="text-xl">🚀 Getting Started</CardTitle>
+              <CardTitle className="text-xl">Getting Started</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <p className="text-sm">
@@ -122,25 +133,23 @@ export default function Home() {
                 and{" "}
                 <code className="bg-muted px-1.5 py-0.5 rounded text-xs">
                   components/ui/card.jsx
-                </code>
-              </p>
-              <p className="text-sm">
-                <strong>2. Read the placeholders:</strong> Open{" "}
-                <code className="bg-muted px-1.5 py-0.5 rounded text-xs">
-                  components/ui/dialog.jsx
                 </code>{" "}
-                for implementation hints
+                to see the patterns
               </p>
               <p className="text-sm">
-                <strong>3. Build your components:</strong> Follow the workshop
-                tasks and design system principles
-              </p>
-              <p className="text-sm">
-                <strong>4. Check the README:</strong> Detailed instructions and
-                resources are in{" "}
+                <strong>2. Read the stubs:</strong> Open the task files in{" "}
                 <code className="bg-muted px-1.5 py-0.5 rounded text-xs">
-                  README.md
-                </code>
+                  components/ui/
+                </code>{" "}
+                for hints and imports
+              </p>
+              <p className="text-sm">
+                <strong>3. Build your components:</strong> Follow the patterns
+                from Button (CVA variants) and Card (composable subcomponents)
+              </p>
+              <p className="text-sm">
+                <strong>4. Test in the browser:</strong> Add your components to
+                this page and verify they work
               </p>
             </CardContent>
           </Card>
