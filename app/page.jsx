@@ -18,7 +18,7 @@ export default function Home() {
           {/* Header */}
           <div className="text-center space-y-4">
             <h1 className="text-4xl font-bold tracking-tight">
-              Design Systems Workshop CKKKK
+              Design Systems Workshop CKKKK KKK
             </h1>
             <p className="text-lg text-muted-foreground">
               Build reusable UI components using design system patterns
