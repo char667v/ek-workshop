@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from "@/components/ui/dialog"
 import {
   Card,
   CardContent,
@@ -7,6 +8,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert"
+import { FormDialog } from "@/components/ui/form-dialog"
+
 
 export default function Home() {
   return (
@@ -37,7 +41,7 @@ export default function Home() {
                 Dialog, Alert, and Form Dialog.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Button variant="default">Default</Button>
+                
                 {/* TODO: Uncomment these after adding variants in button.jsx */}
                 {/* <Button variant="secondary">Secondary</Button> */}
                 {/* <Button variant="success">Success</Button> */}
@@ -45,8 +49,73 @@ export default function Home() {
                 {/* <Button variant="outline">Outline</Button> */}
                 {/* <Button variant="ghost">Ghost</Button> */}
                 {/* <Button variant="link">Link</Button> */}
+
+                <Button variant="default" size="default">Default</Button>
+                <Button variant="default" size="sm">Default SM</Button>
+                <Button variant="default" size="lg">Default LG</Button>
+
+                <Button variant="secondary" size="default">Default</Button>
+                <Button variant="secondary" size="sm">Secondary SM</Button>
+                <Button variant="secondary" size="lg">Secondary LG</Button>
+
+                <Button variant="success" size="default">Default</Button>
+                <Button variant="success" size="sm">Success SM</Button>
+                <Button variant="success" size="lg">Success LG</Button>
+                
+                <Button variant="danger" size="lg">Danger LG</Button>
+                <Button variant="outline">Outline</Button>
+                <Button variant="ghost">Ghost</Button>
+                <Button variant="link">Link</Button>
               </div>
             </CardContent>
+
+            <div> {/* Dialog component */}
+              <Dialog>
+                <DialogTrigger asChild>
+                <Button>Open Dialog</Button>
+                </DialogTrigger>
+              <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>Are you sure?</DialogTitle>
+                    <DialogDescription>This action cannot be undone.</DialogDescription>
+                </DialogHeader>
+                <DialogFooter>
+                  <DialogClose asChild>
+                    <Button variant="outline">Cancel</Button>
+                </DialogClose>
+                    <Button>Confirm</Button>
+                </DialogFooter>
+              </DialogContent>
+              </Dialog>
+            </div>{/* Dialog component end*/}
+
+            {/* task 3 */}
+            <div className="space-y-4 p-6">
+              <Alert variant="default">
+                <AlertTitle>Default</AlertTitle>
+                <AlertDescription>This is a default alert.</AlertDescription>
+              </Alert>
+              <Alert variant="success">
+                <AlertTitle>Success!</AlertTitle>
+                <AlertDescription>Your changes have been saved.</AlertDescription>
+              </Alert>
+              <Alert variant="destructive">
+                <AlertTitle>Error</AlertTitle>
+                <AlertDescription>Something went wrong. Please try again.</AlertDescription>
+              </Alert>
+              <Alert variant="warning">
+                <AlertTitle>Warning</AlertTitle>
+                <AlertDescription>This action cannot be undone.</AlertDescription>
+              </Alert>
+            </div>
+            {/* task 3 end */}
+
+            <FormDialog>
+  <DialogTrigger asChild>
+    <Button>Contact Us</Button>
+  </DialogTrigger>
+</FormDialog>
+
             <CardFooter>
               <p className="text-xs text-muted-foreground">
                 All components follow design system principles
