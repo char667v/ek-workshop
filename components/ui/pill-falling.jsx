@@ -13,14 +13,15 @@ const pills = [
   { label: "Moving rectangles", icon: Move, variant: "blue" },
   { icon: Sparkles, variant: "yellow" },
   { label: "Prototyping", icon: Shuffle, variant: "gray" },
-  { icon: MousePointerClick, variant: "gray" },
   { label: "Making it pop", icon: PaintRoller, variant: "orange" },
   { label: "Thinking systems", icon: Globe, variant: "pink" },
   { label: "Improving UX", icon: Smile, variant: "yellow" },
-  { icon: Coffee, variant: "purple" },
   { label: "Rounding corners", icon: SquareRoundCorner, variant: "lime" },
   { label: "Reframing problems", icon: Hash, variant: "green" },
   { label: "Testing", icon: Pencil, variant: "purple" },
+
+  { icon: MousePointerClick, variant: "gray" },
+  { icon: Coffee, variant: "purple" },
   { icon: BadgeCheck, variant: "blue" },
 ]
 
