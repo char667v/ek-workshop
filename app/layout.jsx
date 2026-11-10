@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   title: "Design Systems Workshop",
-  description: "Learn to build consistent, accessible UI components",
+  description: "Learn to build consistent, accessible UI components and design systems with React and Tailwind CSS.",
 }
 
 export default function RootLayout({ children }) {
