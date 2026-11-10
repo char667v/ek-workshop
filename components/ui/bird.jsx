@@ -4,7 +4,7 @@ const WINGS = [
   //   { size: 0.7, begin: "1.33s" },  // S
   //   { size: 0.85, begin: "2.67s" }, // M
   { size: 1, begin: "0s" }, // L
-  { size: 1, begin: "3s" }, // L
+  { size: 0.85, begin: "3s" }, // M
 ];
 
 const ANGLES = [0, -16, 0]; // rest -> swung back -> rest
