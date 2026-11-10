@@ -8,12 +8,13 @@ import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from "@/comp
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
-import PillFalling from "@/components/ui/pill-falling"
-import { Pill } from "@/components/ui/pill"
+import PillFalling from "@/components/ui/pill-falling";
+import { Pill } from "@/components/ui/pill";
 
-{
-  /* ******************************* */
-}
+import Eyes from "@/components/ui/eyes";
+
+/* ******************************* */
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
@@ -307,9 +308,13 @@ export default function Home() {
               </Pill>
             ))}
           </div>
+
+          {/* ************* Movable eyes ****************** */}
+          <div className="flex flex-wrap gap-4 p-6">
+            <Eyes />
+          </div>
         </div>
       </div>
     </main>
   );
 }
-
