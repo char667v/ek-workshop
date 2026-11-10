@@ -13,6 +13,11 @@ import { Pill } from "@/components/ui/pill";
 
 import Eyes from "@/components/ui/eyes";
 
+import HeroTextLetters from "@/components/ui/hero-text-letters";
+import HeroTextFlashlight from "@/components/ui/hero-text-flashlight";
+
+import BirdAnimated from "@/components/ui/bird";
+
 /* ******************************* */
 
 export default function Home() {
@@ -313,6 +318,22 @@ export default function Home() {
           <div className="flex flex-wrap gap-4 p-6">
             <Eyes />
           </div>
+
+          {/* ************* Typing HeroTextLetters section ****************** */}
+          <div className="flex flex-wrap gap-4 p-6">
+            <HeroTextLetters />
+          </div>
+
+          {/* ************* Typing HeroTextFlashlight section ****************** */}
+          <div className="flex flex-wrap gap-4 p-6">
+            <HeroTextFlashlight />
+          </div>
+
+          {/* ************* Bird Animated ****************** */}
+          <div className="flex flex-wrap gap-4 p-6">
+            <BirdAnimated />
+          </div>
+          
         </div>
       </div>
     </main>

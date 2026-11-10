@@ -8,7 +8,8 @@ import {
 } from "lucide-react"
 import { Pill } from "@/components/ui/pill"
 
-// No label = circle, with label = pill
+// No label = circle
+// Label = pill
 const pills = [
   { label: "Moving rectangles", icon: Move, variant: "blue" },
   { icon: Sparkles, variant: "yellow" },
