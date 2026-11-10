@@ -11,19 +11,35 @@ import { Pill } from "@/components/ui/pill"
 // No label = circle
 // Label = pill
 const pills = [
-  { label: "Moving rectangles", icon: Move, variant: "blue" },
-  { icon: Sparkles, variant: "yellow" },
-  { label: "Prototyping", icon: Shuffle, variant: "gray" },
-  { label: "Making it pop", icon: PaintRoller, variant: "orange" },
-  { label: "Thinking systems", icon: Globe, variant: "pink" },
-  { label: "Improving UX", icon: Smile, variant: "yellow" },
-  { label: "Rounding corners", icon: SquareRoundCorner, variant: "lime" },
-  { label: "Reframing problems", icon: Hash, variant: "green" },
-  { label: "Testing", icon: Pencil, variant: "purple" },
+  // colored pills 
+  // { label: "Moving rectangles", icon: Move, variant: "blue" },
+  // { icon: Sparkles, variant: "yellow" },
+  // { label: "Prototyping", icon: Shuffle, variant: "gray" },
+  // { label: "Making it pop", icon: PaintRoller, variant: "orange" },
+  // { label: "Thinking systems", icon: Globe, variant: "pink" },
+  // { label: "Improving UX", icon: Smile, variant: "yellow" },
+  // { label: "Rounding corners", icon: SquareRoundCorner, variant: "lime" },
+  // { label: "Reframing problems", icon: Hash, variant: "green" },
+  // { label: "Testing", icon: Pencil, variant: "purple" },
 
-  { icon: MousePointerClick, variant: "gray" },
-  { icon: Coffee, variant: "purple" },
-  { icon: BadgeCheck, variant: "blue" },
+  // { icon: MousePointerClick, variant: "gray" },
+  // { icon: Coffee, variant: "purple" },
+  // { icon: BadgeCheck, variant: "blue" },
+
+// black variant for all pills
+  { label: "Moving rectangles", icon: Move, variant: "black" },
+  { icon: Sparkles, variant: "peach" },
+  { label: "Prototyping", icon: Shuffle, variant: "black" },
+  { label: "Making it pop", icon: PaintRoller, variant: "black" },
+  { label: "Thinking systems", icon: Globe, variant: "black" },
+  { label: "Improving UX", icon: Smile, variant: "black" },
+  { label: "Rounding corners", icon: SquareRoundCorner, variant: "black" },
+  { label: "Reframing problems", icon: Hash, variant: "black" },
+  { label: "Testing", icon: Pencil, variant: "black" },
+
+  { icon: MousePointerClick, variant: "black" },
+  { icon: Coffee, variant: "black" },
+  { icon: BadgeCheck, variant: "black" },
 ]
 
 export default function PillFalling() {

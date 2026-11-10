@@ -14,7 +14,9 @@ const pillVariants = cva(
         pink: "bg-pink-200",
         purple: "bg-violet-200",
         lime: "bg-lime-200",
+        peach: "bg-orange-200",
         gray: "bg-neutral-100 border border-neutral-200",
+        black: "bg-neutral-900 text-white",
       },
       shape: {
         pill: "px-8 py-4",

@@ -307,11 +307,11 @@ export default function Home() {
           {/* ************* FallingPills/skills ****************** */}
           <div className="flex flex-wrap gap-4 p-6">
             <PillFalling />
-            {["blue", "yellow", "orange", "green", "pink", "purple", "lime", "gray"].map((v) => (
+            {/* {["blue", "yellow", "orange", "green", "pink", "purple", "lime", "gray"].map((v) => (
               <Pill key={v} variant={v}>
                 {v}
               </Pill>
-            ))}
+            ))} */}
           </div>
 
           {/* ************* Movable eyes ****************** */}
