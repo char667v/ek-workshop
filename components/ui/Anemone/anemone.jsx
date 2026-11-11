@@ -1,6 +1,6 @@
 import { useId } from "react";
-import styles from "./anemone.module.css";
-import { outline, centerLines, centerDisc, stamens, petals } from "./anemonedata";
+import styles from "@/components/ui/Anemone/anemone.module.css";
+import { outline, centerLines, centerDisc, stamens, petals } from "@/components/ui/Anemone/anemonedata";
 
 // variant="pulse"  -> the whole flower breathes in and out
 // variant="petals" -> each petal closes and opens, one after another
