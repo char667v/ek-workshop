@@ -13,10 +13,13 @@ import { Pill } from "@/components/ui/pill";
 
 import Eyes from "@/components/ui/eyes";
 
-import HeroTextLetters from "@/components/ui/hero-text-letters";
-import HeroTextFlashlight from "@/components/ui/hero-text-flashlight";
+// import HeroTextLetters from "@/components/ui/hero-sentence";
+// import HeroTextFlashlight from "@/components/ui/hello-word";
+import HeroHello from "@/components/ui/hello-word"
+import HeroSentence from "@/components/ui/hero-sentence"
 
-import BirdAnimated from "@/components/ui/bird";
+
+import { BirdAnimated } from "@/components/ui/bird";
 
 /* ******************************* */
 
@@ -319,21 +322,32 @@ export default function Home() {
             <Eyes />
           </div>
 
-          {/* ************* Typing HeroTextLetters section ****************** */}
+          {/* ************* Typing HeroTextLetters section ****************** 
           <div className="flex flex-wrap gap-4 p-6">
             <HeroTextLetters />
           </div>
 
-          {/* ************* Typing HeroTextFlashlight section ****************** */}
+           ************* Typing HeroTextFlashlight section ****************** 
           <div className="flex flex-wrap gap-4 p-6">
             <HeroTextFlashlight />
-          </div>
+          </div> */}
+
+          {/* ************* Hello and text section ******************  */}
+          <svg className="typing-hero" viewBox="0 -60 870 960">
+            <HeroHello />
+            <HeroSentence />
+          </svg>
+
+          {/* viewBox starts at y=-60 so "Hello!" isn't cut off before it drops */}
+          <svg className="typing-hero" viewBox="0 -60 870 960">
+            <HeroHello variant="fade" />
+            <HeroSentence variant="flashlight" />
+          </svg>
 
           {/* ************* Bird Animated ****************** */}
           <div className="flex flex-wrap gap-4 p-6">
             <BirdAnimated />
           </div>
-          
         </div>
       </div>
     </main>
