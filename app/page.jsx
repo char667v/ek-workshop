@@ -5,7 +5,7 @@ import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 import { FormDialog } from "@/components/ui/form-dialog";
 import { Badge } from "@/components/ui/badge";
 import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/Accordion";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 import PillFalling from "@/components/ui/pill-falling";
@@ -20,6 +20,8 @@ import HeroSentence from "@/components/ui/hero-sentence"
 
 
 import { BirdAnimated } from "@/components/ui/bird";
+
+import Anemone from "@/components/ui/Anemone/anemone";
 
 /* ******************************* */
 

@@ -1,0 +1,30 @@
+/* 164px 175px is the center of the flower in the SVG */
+
+.pulse {
+  transform-origin: 164px 175px;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.petal {
+  transform-origin: 164px 175px;
+  animation: petal 4s ease-in-out infinite;
+}
+
+/* Closes a bit faster (0-40%) than it opens again (40-100%), like a jellyfish */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  40%      { transform: scale(0.9); }
+}
+
+@keyframes petal {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  40%      { transform: scale(0.8) rotate(4deg); }
+}
+
+/* Stop the movement for people who have turned on "reduce motion" */
+@media (prefers-reduced-motion: reduce) {
+  .pulse,
+  .petal {
+    animation: none;
+  }
+}
