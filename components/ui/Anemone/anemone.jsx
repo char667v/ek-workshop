@@ -5,14 +5,7 @@ import { outline, centerLines, centerDisc, stamens, petals } from "./anemonedata
 // variant="pulse"  -> the whole flower breathes in and out
 // variant="petals" -> each petal closes and opens, one after another
 // delay            -> seconds; a different delay per flower makes them move at different times
-export default function Anemone({
-  variant = "pulse",
-  lineColor = variant === "petals" ? "black" : "white",
-  petalColor = "white",
-  size = 326,
-  rotate = 0,
-  delay = 0,
-}) {
+export default function Anemone({ variant = "pulse", lineColor = variant === "petals" ? "black" : "white", petalColor = "white", size = 326, rotate = 0, delay = 0 }) {
   const id = useId();
   const linesId = `${id}-lines`;
 
@@ -32,16 +25,11 @@ export default function Anemone({
         <>
           {/* Each petal is its own <svg>, so the browser can move it without redrawing it */}
           {petals.map((petal, i) => (
-            <svg
-              key={i}
-              viewBox="0 0 326 326"
-              className={`${styles.layer} ${styles.petal}`}
-              style={{ animationDelay: `${delay + i * 0.15}s` }}
-            >
+            <svg key={i} viewBox="0 0 326 326" className={`${styles.layer} ${styles.petal}`} style={{ animationDelay: `${delay + i * 0.15}s` }}>
               <clipPath id={`${id}-${i}`}>
                 <path d={petal} />
               </clipPath>
-              <g clipPath={`url(#${id}-${i})`}>
+              <g /* clipPath={`url(#${id}-${i})`} */>
                 <path d={petal} fill={petalColor} />
                 <use href={`#${linesId}`} />
               </g>
