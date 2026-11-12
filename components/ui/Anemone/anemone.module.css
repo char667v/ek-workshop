@@ -1,13 +1,34 @@
-/* 164px 175px is the center of the flower in the SVG */
+.flower {
+  position: relative;
+  aspect-ratio: 1;
+}
 
+/* Every layer covers the whole flower */
+.layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Holds the shared outline; takes up no space */
+.hidden {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+/* 50.3% 53.7% is the center of the flower (164px 175px of 326px) */
 .pulse {
-  transform-origin: 164px 175px;
+  transform-origin: 50.3% 53.7%;
   animation: pulse 4s ease-in-out infinite;
+  will-change: transform;
 }
 
 .petal {
-  transform-origin: 164px 175px;
+  transform-origin: 50.3% 53.7%;
   animation: petal 4s ease-in-out infinite;
+  will-change: transform;
 }
 
 /* Closes a bit faster (0-40%) than it opens again (40-100%), like a jellyfish */

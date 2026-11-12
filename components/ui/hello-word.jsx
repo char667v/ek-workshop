@@ -4,6 +4,7 @@
 // Types "Hello!" and drops it with a bounce.
 // <HeroHello />                drops (default)
 // <HeroHello variant="fade" /> drops, then slowly fades out
+// <HeroHello variant="still" /> stays where it is, no drop
 
 import { useEffect, useRef } from "react"
 
@@ -65,7 +66,7 @@ export default function HeroHello({ variant }) {
     async function run() {
       await type(hello, HELLO, 120)
       await sleep(300)
-      if (stopped) return
+      if (stopped || variant === "still") return
       hello.classList.add("swing") // swing down 90°
     }
 
@@ -82,6 +83,91 @@ export default function HeroHello({ variant }) {
     </>
   )
 }
+
+// "use client"
+
+// // HERO HELLO
+// // Types "Hello!" and drops it with a bounce.
+// // <HeroHello />                drops (default)
+// // <HeroHello variant="fade" /> drops, then slowly fades out
+
+// import { useEffect, useRef } from "react"
+
+// const HELLO = "Hello!"
+
+// const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+
+// const css = `
+//   .typing-hero { --ink: #3f4632; display: block; width: 100%; max-width: 870px; height: auto; }
+//   @media (prefers-color-scheme: dark) {
+//     .typing-hero { --ink: #ffffff; }
+//   }
+//   .typing-hero text { fill: var(--ink); font-family: "Fira Sans", system-ui, sans-serif; font-size: 48px; white-space: pre; }
+
+//   /* "Hello!" starts horizontal, then drops 90° around its first letter and bounces */
+//   .typing-hero .hello { transform-origin: 45px 25px; }
+//   .typing-hero .hello.swing { animation: drop-bounce 1.2s forwards; }
+
+//   /* Fade variant: the drop (1.2s), then a slow fade (2s) that starts after 1.4s */
+//   .typing-hero .hello.fade.swing { animation: drop-bounce 1.2s forwards, fade-out 2s ease-in-out 1.4s forwards; }
+
+//   @keyframes drop-bounce {
+//     0%   { transform: rotate(0deg);  animation-timing-function: ease-in; }  /* falls, speeding up */
+//     45%  { transform: rotate(90deg); animation-timing-function: ease-out; } /* hits the bottom */
+//     62%  { transform: rotate(76deg); animation-timing-function: ease-in; }  /* bounces back up */
+//     78%  { transform: rotate(90deg); animation-timing-function: ease-out; } /* falls again */
+//     89%  { transform: rotate(84deg); animation-timing-function: ease-in; }  /* small bounce */
+//     100% { transform: rotate(90deg); }                                       /* rests */
+//   }
+
+//   @keyframes fade-out {
+//     to { opacity: 0; }
+//   }
+// `
+
+// export default function HeroHello({ variant }) {
+//   const helloRef = useRef(null)
+
+//   useEffect(() => {
+//     const hello = helloRef.current
+//     let stopped = false // stops the typing if React removes the component
+
+//     // Empty the text first, so the letters aren't added twice
+//     // when React runs this effect twice in development.
+//     hello.textContent = ""
+
+//     // Adds one letter at a time, each in its own <tspan>,
+//     // so each letter can change color on hover by itself.
+//     async function type(el, text, msPerLetter) {
+//       for (const char of text) {
+//         if (stopped) return
+//         const letter = document.createElementNS("http://www.w3.org/2000/svg", "tspan")
+//         letter.textContent = char
+//         el.appendChild(letter)
+//         await sleep(msPerLetter)
+//       }
+//     }
+
+//     async function run() {
+//       await type(hello, HELLO, 120)
+//       await sleep(300)
+//       if (stopped) return
+//       hello.classList.add("swing") // swing down 90°
+//     }
+
+//     run()
+//     return () => {
+//       stopped = true
+//     }
+//   }, [])
+
+//   return (
+//     <>
+//       <style>{css}</style>
+//       <text ref={helloRef} className={variant === "fade" ? "hello fade" : "hello"} x="40" y="25" />
+//     </>
+//   )
+// }
 
 // "use client"
 

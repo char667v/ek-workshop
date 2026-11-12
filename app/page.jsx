@@ -15,9 +15,8 @@ import Eyes from "@/components/ui/eyes";
 
 // import HeroTextLetters from "@/components/ui/hero-sentence";
 // import HeroTextFlashlight from "@/components/ui/hello-word";
-import HeroHello from "@/components/ui/hello-word"
-import HeroSentence from "@/components/ui/hero-sentence"
-
+import HeroHello from "@/components/ui/hello-word";
+import HeroSentence from "@/components/ui/hero-sentence";
 
 import { BirdAnimated } from "@/components/ui/bird";
 
@@ -349,6 +348,16 @@ export default function Home() {
           {/* ************* Bird Animated ****************** */}
           <div className="flex flex-wrap gap-4 p-6">
             <BirdAnimated />
+          </div>
+
+          {/* ************* Anemone Animated ****************** */}
+          <div className="flex flex-wrap gap-4 p-6">
+            <Anemone /> // the whole flower pulses
+            <Anemone variant="petals" /> // the petals close and open one after another
+            <Anemone variant="petals" /> // the petals close and open one after another
+            <Anemone variant="petals" petalColor="orange" />
+            <Anemone variant="petals" petalColor="#ffd9c7" />
+            <Anemone variant="petals" petalColor="lightblue" />
           </div>
         </div>
       </div>
